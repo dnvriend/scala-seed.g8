@@ -1,16 +1,14 @@
-# play-seed.g8
-A Play Framework template project
+# scala-seed.g8
+A scala template project
 
-# Test locally
-Clone the project. Then directly from eg. your `project` directory (if you have one) so one directory
-below the `play-seed.g8` directory launch `sbt new file://./play-seed.g8`.
+# Introduction
+A very simple and small scala project containing the FP library Scalaz and Cats, choose the one you like!
 
-# Other Templates
-- Official minimal scala template: `scala/scala-seed.g8`
+# Usage
+You need at least sbt v0.13.13 and then type:
 
-# Information about templating
-- [sbt - sbt new and templating](http://www.scala-sbt.org/0.13/docs/sbt-new-and-Templates.html)
-- [giter8 - github](https://github.com/foundweekends/giter8)
+```
+sbt new dnvriend/scala-seed.g8
+```
 
-# Information about scaffolding
-- [giter8 - scaffolding](http://www.foundweekends.org/giter8/scaffolding.html)
+Have fun!
