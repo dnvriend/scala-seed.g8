@@ -12,8 +12,10 @@ scalacOptions += "-Yliteral-types"       // enable SIP-23 implementation
 // functional and typelevel programming
 libraryDependencies += "org.scalaz" %% "scalaz-core" % "7.2.7"
 libraryDependencies += "org.typelevel" %% "scalaz-outlaws" % "0.2"
+libraryDependencies += "com.github.mpilquist" %% "simulacrum" % "0.10.0"
 //libraryDependencies += "com.chuusai" %% "shapeless" % "2.3.2"
 //libraryDependencies += "org.typelevel" %% "cats" % "0.8.1"
+libraryDependencies += "com.github.mpilquist" %% "simulacrum" % "0.10.0"
 
 // testing
 libraryDependencies += "org.typelevel" %% "scalaz-scalatest" % "1.1.0" % Test  
@@ -42,5 +44,8 @@ headers := Map(
   "scala" -> Apache2_0("2016", "$author_name$"),
   "conf" -> Apache2_0("2016", "$author_name$", "#")
 )
+
+addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full)
+addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.3")
 
 enablePlugins(AutomateHeaderPlugin, SbtScalariform)
