@@ -23,7 +23,7 @@ libraryDependencies += "com.github.mpilquist" %% "simulacrum" % "0.10.0"
 
 // testing
 // https://github.com/typelevel/scalaz-scalatest
-libraryDependencies += "org.typelevel" %% "scalaz-scalatest" % "1.1.0" % Test
+libraryDependencies += "org.typelevel" %% "scalaz-scalatest" % "1.1.1" % Test
 // https://www.playframework.com/documentation/2.5.x/ScalaTestingWithScalaTest#Mockito  
 //libraryDependencies += "org.mockito" % "mockito-core" % "2.2.21" % Test
 // https://github.com/scalatest/scalatest
