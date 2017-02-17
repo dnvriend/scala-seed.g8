@@ -16,6 +16,9 @@ libraryDependencies += "com.github.mpilquist" %% "simulacrum" % "0.10.0"
 // https://github.com/typelevel/cats
 //libraryDependencies += "org.typelevel" %% "cats" % "0.8.1"
 
+// json
+libraryDependencies += "com.typesafe.play" %% "play-json" % "2.6.0-M1"
+
 // compile-time DI (only used at compile-time so in "provided" scope)
 libraryDependencies += "com.softwaremill.macwire" %% "macros" % "2.3.0" % "provided"
 
