@@ -2,14 +2,9 @@ name := "$name$"
 
 organization := "$organization$"
 
-version := "1.0.0"
+version := "1.0.0-SNAPSHOT"
 
 scalaVersion := "2.12.1"
-
-// http://typelevel.org/scala/
-//scalaOrganization := "org.typelevel"
-//scalacOptions += "-Ypartial-unification" // enable fix for SI-2712
-//scalacOptions += "-Yliteral-types"       // enable SIP-23 implementation
 
 // functional and typelevel programming
 // https://github.com/scalaz/scalaz
@@ -20,6 +15,9 @@ libraryDependencies += "com.github.mpilquist" %% "simulacrum" % "0.10.0"
 //libraryDependencies += "com.chuusai" %% "shapeless" % "2.3.2"
 // https://github.com/typelevel/cats
 //libraryDependencies += "org.typelevel" %% "cats" % "0.8.1"
+
+// compile-time DI (only used at compile-time so in "provided" scope)
+libraryDependencies += "com.softwaremill.macwire" %% "macros" % "2.3.0" % "provided"
 
 // testing
 // https://github.com/typelevel/scalaz-scalatest
@@ -52,6 +50,10 @@ headers := Map(
   "scala" -> Apache2_0("2016", "$author_name$"),
   "conf" -> Apache2_0("2016", "$author_name$", "#")
 )
+
+// 
+// compiler plugins
+//
 
 // https://github.com/scalamacros/paradise
 // http://docs.scala-lang.org/overviews/macros/paradise.html
