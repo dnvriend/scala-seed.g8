@@ -8,18 +8,19 @@ scalaVersion := "2.12.1"
 
 // functional and typelevel programming
 // https://github.com/scalaz/scalaz
-libraryDependencies += "org.scalaz" %% "scalaz-core" % "7.2.9"
+libraryDependencies += "org.scalaz" %% "scalaz-core" % "7.2.10"
 // https://github.com/mpilquist/simulacrum
 libraryDependencies += "com.github.mpilquist" %% "simulacrum" % "0.10.0"
 // https://github.com/milessabin/shapeless
 //libraryDependencies += "com.chuusai" %% "shapeless" % "2.3.2"
 // https://github.com/typelevel/cats
-//libraryDependencies += "org.typelevel" %% "cats" % "0.8.1"
+//libraryDependencies += "org.typelevel" %% "cats" % "0.9.0"
 
 // json
-libraryDependencies += "com.typesafe.play" %% "play-json" % "2.6.0-M5"
+//libraryDependencies += "com.typesafe.play" %% "play-json" % "2.6.0-M6"
 
 // compile-time DI (only used at compile-time so in "provided" scope)
+// https://github.com/adamw/macwire
 libraryDependencies += "com.softwaremill.macwire" %% "macros" % "2.3.0" % "provided"
 
 // testing
@@ -27,6 +28,10 @@ libraryDependencies += "com.softwaremill.macwire" %% "macros" % "2.3.0" % "provi
 libraryDependencies += "org.typelevel" %% "scalaz-scalatest" % "1.1.2" % Test
 // https://www.playframework.com/documentation/2.5.x/ScalaTestingWithScalaTest#Mockito  
 //libraryDependencies += "org.mockito" % "mockito-core" % "2.2.21" % Test
+// http://scalamock.org/
+// https://github.com/paulbutcher/ScalaMock
+libraryDependencies += "org.scalamock" %% "scalamock-scalatest-support" % "3.5.0" % Test
+// http://www.scalatest.org/
 // https://github.com/scalatest/scalatest
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.1"
 
@@ -50,8 +55,8 @@ SbtScalariform.autoImport.scalariformPreferences := SbtScalariform.autoImport.sc
 import de.heikoseeberger.sbtheader.license.Apache2_0
 
 headers := Map(
-  "scala" -> Apache2_0("2016", "$author_name$"),
-  "conf" -> Apache2_0("2016", "$author_name$", "#")
+  "scala" -> Apache2_0("2017", "$author_name$"),
+  "conf" -> Apache2_0("2017", "$author_name$", "#")
 )
 
 // 
