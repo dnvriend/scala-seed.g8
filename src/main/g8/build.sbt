@@ -6,6 +6,10 @@ version := "1.0.0-SNAPSHOT"
 
 scalaVersion := "2.12.1"
 
+scalaOrganization in ThisBuild := "org.typelevel"
+
+scalacOptions in ThisBuild += "-Yliteral-types"
+
 // functional and typelevel programming
 // https://github.com/scalaz/scalaz
 libraryDependencies += "org.scalaz" %% "scalaz-core" % "7.2.10"
@@ -15,9 +19,6 @@ libraryDependencies += "com.github.mpilquist" %% "simulacrum" % "0.10.0"
 //libraryDependencies += "com.chuusai" %% "shapeless" % "2.3.2"
 // https://github.com/typelevel/cats
 //libraryDependencies += "org.typelevel" %% "cats" % "0.9.0"
-
-// json
-//libraryDependencies += "com.typesafe.play" %% "play-json" % "2.6.0-M6"
 
 // compile-time DI (only used at compile-time so in "provided" scope)
 // https://github.com/adamw/macwire
