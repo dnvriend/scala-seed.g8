@@ -4,23 +4,23 @@ import scalaz._
 import Scalaz._
 
 object Person {
-	def validateNonEmpty(fieldName: String, value: String): ValidationNel[String, String] =
-		Option(value).filter(_.trim.nonEmpty).toSuccessNel(s"Field '\$fieldName' must not be empty")	
+  def validateNonEmpty(fieldName: String, value: String): ValidationNel[String, String] =
+    Validation.liftNel(value)(_.trim.isEmpty, s"Field '$fieldName' must not be empty")
 
-	def validateName(name: String): ValidationNel[String, String] = 
-		validateNonEmpty("name", name)
-	  
-	def validateGt(fieldName: String, maxValue: Int, value: Int): ValidationNel[String, Int] =
-		Option(value).filter(_ > maxValue).toSuccessNel(s"Field '\$fieldName' with value '\$value' must be greater than '\$maxValue'")
+  def validateName(name: String): ValidationNel[String, String] =
+    validateNonEmpty("name", name)
 
-	def validateLt(fieldName: String, maxValue: Int, value: Int): ValidationNel[String, Int] =
-		Option(value).filter(_ < maxValue).toSuccessNel(s"Field '\$fieldName' with value '\$value' must be less than '\$maxValue'")
+  def validateGt(fieldName: String, maxValue: Int, value: Int): ValidationNel[String, Int] =
+    Validation.liftNel(value)(_ < maxValue, s"Field '$fieldName' with value '$value' must be greater than '$maxValue'")
 
-	def validateAge(age: Int): ValidationNel[String, Int] = 
-		validateGt("age", -1, age) *> validateLt("age", 140, age)
-		
-	def validate(name: String, age: Int): ValidationNel[String, Person] = 
-	  (validateName(name) |@| validateAge(age))(Person.apply)
+  def validateLt(fieldName: String, maxValue: Int, value: Int): ValidationNel[String, Int] =
+    Validation.liftNel(value)(_ > maxValue, s"Field '$fieldName' with value '$value' must be less than '$maxValue'")
+
+  def validateAge(age: Int): ValidationNel[String, Int] =
+    validateGt("age", -1, age) *> validateLt("age", 140, age)
+
+  def validate(name: String, age: Int): ValidationNel[String, Person] =
+    (validateName(name) |@| validateAge(age))(Person.apply)
 }
 
 final case class Person(name: String, age: Int)
