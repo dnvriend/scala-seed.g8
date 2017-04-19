@@ -4,7 +4,7 @@ organization := "$organization$"
 
 version := "1.0.0-SNAPSHOT"
 
-scalaVersion := "2.12.1"
+scalaVersion := "2.12.2"
 
 scalaOrganization in ThisBuild := "org.typelevel"
 
