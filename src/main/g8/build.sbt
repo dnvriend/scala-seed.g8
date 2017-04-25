@@ -6,10 +6,6 @@ version := "1.0.0-SNAPSHOT"
 
 scalaVersion := "2.12.2"
 
-scalaOrganization in ThisBuild := "org.typelevel"
-
-scalacOptions in ThisBuild += "-Yliteral-types"
-
 // functional and typelevel programming
 // https://github.com/scalaz/scalaz
 libraryDependencies += "org.scalaz" %% "scalaz-core" % "7.2.10"
