@@ -6,13 +6,20 @@ version := "1.0.0-SNAPSHOT"
 
 scalaVersion := "2.12.2"
 
+// improves type constructor inference with support for partial unification,
+// fixing the notorious SI-2712.
+scalacOptions += "-Ypartial-unification"
+
+//scalacOptions += "-Ydelambdafy:method"
+scalacOptions += "-Ydelambdafy:inline"
+
 // functional and typelevel programming
 // https://github.com/scalaz/scalaz
-libraryDependencies += "org.scalaz" %% "scalaz-core" % "7.2.10"
+libraryDependencies += "org.scalaz" %% "scalaz-core" % "7.2.12"
 // https://github.com/mpilquist/simulacrum
 libraryDependencies += "com.github.mpilquist" %% "simulacrum" % "0.10.0"
 // https://github.com/milessabin/shapeless
-// libraryDependencies += "com.chuusai" %% "shapeless" % "2.3.2"
+libraryDependencies += "com.chuusai" %% "shapeless" % "2.3.2"
 // https://github.com/typelevel/cats
 //libraryDependencies += "org.typelevel" %% "cats" % "0.9.0"
 
@@ -41,7 +48,7 @@ libraryDependencies += "org.typelevel" %% "scalaz-scalatest" % "1.1.2" % Test
 libraryDependencies += "org.scalamock" %% "scalamock-scalatest-support" % "3.5.0" % Test
 // http://www.scalatest.org/
 // https://github.com/scalatest/scalatest
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.1"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.3"
 
 // testing configuration
 fork in Test := true
