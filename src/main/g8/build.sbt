@@ -6,7 +6,7 @@ version := "1.0.0-SNAPSHOT"
 
 // uncomment the following to enable typelevel scala
 // see: https://github.com/typelevel/scala
-//scalaOrganization := "org.typelevel",
+//scalaOrganization := "org.typelevel"
 //scalaVersion      := "2.12.3-bin-typelevel-4"
 scalaVersion := "2.12.2"
 
