@@ -43,7 +43,7 @@ libraryDependencies += "com.chuusai" %% "shapeless" % "2.3.2"
 
 // compile-time DI (only used at compile-time so in "provided" scope)
 // https://github.com/adamw/macwire
-libraryDependencies += "com.softwaremill.macwire" %% "macros" % "2.3.0" % "provided"
+libraryDependencies += "com.softwaremill.macwire" %% "macros" % "2.3.0" % Provided
 
 // testing
 // https://github.com/typelevel/scalaz-scalatest
@@ -55,7 +55,7 @@ libraryDependencies += "org.typelevel" %% "scalaz-scalatest" % "1.1.2" % Test
 libraryDependencies += "org.scalamock" %% "scalamock-scalatest-support" % "3.6.0" % Test
 // http://www.scalatest.org/
 // https://github.com/scalatest/scalatest
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.3"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.3" % Test
 
 // testing configuration
 fork in Test := true
