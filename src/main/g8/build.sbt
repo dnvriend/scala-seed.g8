@@ -8,7 +8,7 @@ version := "1.0.0-SNAPSHOT"
 // see: https://github.com/typelevel/scala
 //scalaOrganization := "org.typelevel"
 //scalaVersion      := "2.12.3-bin-typelevel-4"
-scalaVersion := "2.12.2"
+scalaVersion := "2.12.3"
 
 // improves type constructor inference with support for partial unification,
 // fixing the notorious SI-2712.
