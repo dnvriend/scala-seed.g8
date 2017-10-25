@@ -92,7 +92,7 @@ lintAndRewrite := {
     "NoAutoTupling", // https://scalacenter.github.io/scalafix/docs/rules/NoAutoTupling
     "NoValInForComprehension", // https://scalacenter.github.io/scalafix/docs/rules/NoValInForComprehension
     "NoInfer", // https://scalacenter.github.io/scalafix/docs/rules/NoInfer
-  ).map(rule => s" $rule")
+  ).map(rule => s" \$rule")
     .map(rule => scalafix.toTask(rule))
     .reduce(_ dependsOn _).value
 }
