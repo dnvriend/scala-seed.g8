@@ -4,15 +4,15 @@ organization := "$organization$"
 
 version := "1.0.0-SNAPSHOT"
 
-scalaVersion := "2.12.4"
+scalaVersion := "2.12.6"
 
 // functional and typelevel programming
 // https://github.com/scalaz/scalaz
-libraryDependencies += "org.scalaz" %% "scalaz-core" % "7.2.16"
+libraryDependencies += "org.scalaz" %% "scalaz-core" % "7.2.24"
 // https://github.com/mpilquist/simulacrum
-libraryDependencies += "com.github.mpilquist" %% "simulacrum" % "0.11.0"
+libraryDependencies += "com.github.mpilquist" %% "simulacrum" % "0.12.0"
 // https://github.com/milessabin/shapeless
-libraryDependencies += "com.chuusai" %% "shapeless" % "2.3.2"
+libraryDependencies += "com.chuusai" %% "shapeless" % "2.3.3"
 // https://github.com/typelevel/cats
 //libraryDependencies += "org.typelevel" %% "cats" % "0.9.0"
 
@@ -32,7 +32,7 @@ libraryDependencies += "com.chuusai" %% "shapeless" % "2.3.2"
 
 // compile-time DI (only used at compile-time so in "provided" scope)
 // https://github.com/adamw/macwire
-libraryDependencies += "com.softwaremill.macwire" %% "macros" % "2.3.0" % Provided
+libraryDependencies += "com.softwaremill.macwire" %% "macros" % "2.3.1" % Provided
 
 // testing
 // https://github.com/typelevel/scalaz-scalatest
@@ -44,7 +44,7 @@ libraryDependencies += "org.typelevel" %% "scalaz-scalatest" % "1.1.2" % Test
 libraryDependencies += "org.scalamock" %% "scalamock-scalatest-support" % "3.6.0" % Test
 // http://www.scalatest.org/
 // https://github.com/scalatest/scalatest
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.4" % Test
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5" % Test
 
 // testing configuration
 fork in Test := true
@@ -62,10 +62,11 @@ SbtScalariform.autoImport.scalariformPreferences := SbtScalariform.autoImport.sc
    .setPreference(DanglingCloseParenthesis, Preserve)
 
 // enable updating file headers //
+import de.heikoseeberger.sbtheader._
 organizationName := "$author_name$"
 startYear := Some(2017)
 licenses := Seq(("Apache-2.0", new URL("https://www.apache.org/licenses/LICENSE-2.0.txt")))
-headerMappings := headerMappings.value + (HeaderFileType.scala -> HeaderCommentStyle.CppStyleLineComment)
+headerMappings := headerMappings.value + (FileType.scala -> CommentStyle.cppStyleLineComment)
 
 // 
 // compiler plugins
@@ -75,6 +76,6 @@ headerMappings := headerMappings.value + (HeaderFileType.scala -> HeaderCommentS
 // http://docs.scala-lang.org/overviews/macros/paradise.html
 addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.1" cross CrossVersion.full)
 // https://github.com/non/kind-projector
-addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.4")
+addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.7")
 
 enablePlugins(AutomateHeaderPlugin, SbtScalariform)

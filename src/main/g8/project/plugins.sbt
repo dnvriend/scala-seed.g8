@@ -3,4 +3,4 @@
 addSbtPlugin("org.scalariform" % "sbt-scalariform" % "1.8.2")
 
 // enable updating file headers eg. for copyright
-addSbtPlugin("de.heikoseeberger" % "sbt-header" % "3.0.2")
+addSbtPlugin("de.heikoseeberger" % "sbt-header" % "5.0.0")
